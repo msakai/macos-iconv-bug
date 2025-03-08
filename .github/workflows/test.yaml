@@ -32,3 +32,37 @@ jobs:
           status=$?
           hexdump result.txt
           exit $status
+
+  test-freebsd:
+    name: test-freebsd
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - release: "13.4"
+          - release: "14.2"
+          - release: "15.0"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test on FreeBSD
+        uses: vmactions/freebsd-vm@v1
+        with:
+          usesh: true
+          release: ${{ matrix.release }}
+          prepare: |
+            pkg install -y lang/gcc
+          run: |
+            # We want to delete libiconv by "pkg delete -y libiconv" but we cannot.
+            # Because rsync depends on it and we use rsync later.
+            rm /usr/local/include/iconv.h
+
+            gcc -o macos_iconv_bug macos_iconv_bug.c
+            ldd macos_iconv_bug
+
+            set +e
+            ./macos_iconv_bug
+            status=$?
+            hexdump result.txt
+            exit $status
