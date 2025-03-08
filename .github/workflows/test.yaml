@@ -66,3 +66,30 @@ jobs:
             status=$?
             hexdump result.txt
             exit $status
+
+  test-netbsd:
+    name: test-netbsd
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - release: "9.4"
+          - release: "10.1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test on Netbsd
+        uses: vmactions/netbsd-vm@v1
+        with:
+          usesh: true
+          release: ${{ matrix.release }}
+          run: |
+            gcc -o macos_iconv_bug macos_iconv_bug.c
+            ldd macos_iconv_bug
+
+            set +e
+            ./macos_iconv_bug
+            status=$?
+            hexdump result.txt
+            exit $status
