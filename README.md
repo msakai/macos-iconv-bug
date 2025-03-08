@@ -32,7 +32,7 @@ After the execution, `PASS` or `FAIL` is printed, and the output bytes are saved
 
 I prepared [a GitHub Actions workflow](.github/workflows/test.yaml) to run the test program. The result is as follows:
 
-<img width="635" alt="image" src="https://github.com/user-attachments/assets/1022d75b-c241-42db-b58d-150060ee999d" />
+<img width="635" alt="[screenshot]" src="github-actions-screenshot.png" />
 
 ## Versions of `libiconv`
 
