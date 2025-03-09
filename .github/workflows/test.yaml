@@ -111,7 +111,7 @@ jobs:
           usesh: true
           release: ${{ matrix.release }}
           run: |
-            gcc -o macos_iconv_bug macos_iconv_bug.c
+            clang -o macos_iconv_bug macos_iconv_bug.c
             ldd macos_iconv_bug
 
             set +e
