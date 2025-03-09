@@ -51,14 +51,12 @@ jobs:
         with:
           usesh: true
           release: ${{ matrix.release }}
-          prepare: |
-            pkg install -y lang/gcc
           run: |
             # We want to delete libiconv by "pkg delete -y libiconv" but we cannot.
             # Because rsync depends on it and we use rsync later.
             rm /usr/local/include/iconv.h
 
-            gcc -o macos_iconv_bug macos_iconv_bug.c
+            clang -o macos_iconv_bug macos_iconv_bug.c
             ldd macos_iconv_bug
 
             set +e
