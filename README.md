@@ -50,6 +50,9 @@ I prepared [a GitHub Actions workflow](.github/workflows/test.yaml) to run the t
 
 According to the [Apple Open Source](https://opensource.apple.com/releases/) page, macOS 13.5 uses [libiconv-64](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-64) and macOS 14.0 uses [libiconv-80.1.1](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-80.1.1) ([diff](https://github.com/apple-oss-distributions/libiconv/compare/libiconv-64...libiconv-80.1.1)).
 
+## Links
 
-
+* [#24161: iconv regression in recent macOS distributions · Issues · Glasgow Haskell Compiler / GHC · GitLab](https://gitlab.haskell.org/ghc/ghc/-/issues/24161)
+* [Problems with iconv on macOS - The R Blog](https://blog.r-project.org/2024/12/11/problems-with-iconv-on-macos/)
+* https://github.com/Homebrew/homebrew-core/pull/142490#issuecomment-1752444627
 
