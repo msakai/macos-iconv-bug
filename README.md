@@ -32,7 +32,19 @@ After the execution, `PASS` or `FAIL` is printed, and the output bytes are saved
 
 I prepared [a GitHub Actions workflow](.github/workflows/test.yaml) to run the test program. The result is as follows:
 
-<img width="635" alt="[screenshot]" src="github-actions-screenshot.png" />
+|OS|Result|
+|-|-|
+|macOS 13 (Ventura)|✅ PASS|
+|macOS 14 (Sonoma)|❌ FAIL|
+|macOS 15 (Sequoia)|❌ FAIL|
+|Ubuntu Linux 22.04|✅ PASS|
+|FreeBSD 13.4|✅ PASS|
+|FreeBSD 14.2|✅ PASS|
+|FreeBSD 15.0|✅ PASS|
+|NetBSD 9.4|✅ PASS|
+|NetBSD 10.1|✅ PASS|
+|Dragonfly BSD 6.4.0|✅ PASS|
+
 
 ## Versions of `libiconv`
 
