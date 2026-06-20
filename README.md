@@ -37,6 +37,7 @@ I prepared [a GitHub Actions workflow](.github/workflows/test.yaml) to run the t
 |macOS 13 (Ventura)|✅ PASS|
 |macOS 14 (Sonoma)|❌ FAIL|
 |macOS 15 (Sequoia)|❌ FAIL|
+|macOS 26 (Tahoe)|✅ PASS|
 |Ubuntu Linux 22.04|✅ PASS|
 |FreeBSD 13.4|✅ PASS|
 |FreeBSD 14.2|✅ PASS|
@@ -48,7 +49,11 @@ I prepared [a GitHub Actions workflow](.github/workflows/test.yaml) to run the t
 
 ## Versions of `libiconv`
 
-According to the [Apple Open Source](https://opensource.apple.com/releases/) page, macOS 13.5 uses [libiconv-64](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-64) and macOS 14.0 uses [libiconv-80.1.1](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-80.1.1) ([diff](https://github.com/apple-oss-distributions/libiconv/compare/libiconv-64...libiconv-80.1.1)).
+According to the [Apple Open Source](https://opensource.apple.com/releases/) page,
+- macOS 13.5 uses [libiconv-64](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-64)
+- macOS 14.0 uses [libiconv-80.1.1](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-80.1.1) ([diff](https://github.com/apple-oss-distributions/libiconv/compare/libiconv-64...libiconv-80.1.1))
+- macOS 15.0 uses [libiconv-107](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-107) ([diff](https://github.com/apple-oss-distributions/libiconv/compare/libiconv-80.1.1...libiconv-107))
+- macOS 26.0 uses [libiconv-113](https://github.com/apple-oss-distributions/libiconv/tree/libiconv-113) ([diff](https://github.com/apple-oss-distributions/libiconv/compare/libiconv-107...libiconv-113))
 
 ## Links
 
